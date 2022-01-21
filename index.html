@@ -8,30 +8,43 @@
 </head>
 <body>
 
-    <H1>FORMULÁRIOS</H1>
+    <H1> CRIANDO FORMULÁRIOS</H1>
 
-    <h2>Criando uma página no computador.</h2>
-     <p>Formulários são a conexão entre o front end e o backend. As interações com o usuário ocorrem através dos formulários. sempre que precisa de algum dado sendo passado pelo usuário. por exemplo no google, ele ve as palavras que o usuário está passando e o google retorna a nossa resposta. 
+    <h2>Formulários</h2>
+     <p>Formulários são a conexão entre o front end e o backend. É onde ocorre a interação com o usuário.No google, por exemplo, ele ve as palavras que o usuário está passando no campo de pesquisa e a página retorna com a nossa resposta. 
     </p>
 
-    <p> para criar um formulário temos que declarar nossa tag form. quando vc clica no botão enviar, todos os campos dentro desse formulário serão enviados para o backend </p>
+    <p> Para criar um formulário usamos a tag <span><em>FORM</em></span>. Quando vc clica no botão enviar, todos os campos dentro desse formulário serão enviados para o backend, que retornará com a resposta à solicitação. </p>
 
-    <p>Os métodos de envio pode ser GET ou POST. E precisamos de uma ACTION -> o endereço que vc vai utilizar para criar uma requisição. se o seu front end estiver rodando no mesmo domínio que o seu web service, não precisa por http:// mas precisa só colocar /endereço do endpoint. we o endereço for www.programadorbr e o backend estiver em www.programadorbr/cadastro, só precisa colocar /cadastro.
+    <p>Os métodos de envio pode ser <span>GET</span> ou <span>POST</span>. E precisamos de uma <span>ACTION</span> (O endereço que vc vai utilizar para criar uma requisição). Se o seu front end estiver rodando no mesmo domínio que o seu web service, não precisa por o endereço completo do domínio (http://...) mas somente "/endereço do endpoint". Como exemplo, se o endereço for <span>www.patyprogramadorabr.com</span> e o backend estiver em <span>www.patyprogramadorabr.com/cadastro</span>, só precisa colocar <span>/cadastro</span>.
     </p>
 
-   <p> campo INPUT TIPO TEXT (o mais comum) Nome para este campo (pex email). O NOME serve para que o navegador diferencie quando temos mais de um input (nome e email, pex)</p>
+    <h3>INPUTS</h3>
+   <p> Campo INPUT TYPE TEXT é usado para campos em que usuário irá DIGITAR alguma informação solicitada, como NOME ou E-MAIL. </p>
+   <P>O NAME serve para que o navegador diferencie os diferentes inputs que existirem no formulário (nome e email, por exemplo).</p>
+    <p>O campo SUBMIT não precisa de nome (somente INPUT TYPE="SUBMIT")</p>
 
-        <form method="get" action="/cadastro">
-            <input type="text" name="email">
-            <input type="text" name="nome">
-            <input type="submit"> <!-- name="" CAMPO SUBMIT NÃO PRECISA DE NOME-->
+    <h2>Estrutura básica:</h2>
 
-              
+    <img src="FORMULÁRIO METHOD GET.png">
 
+    <h2>No Browser:</h2>
 
-        </form>
+    <form method="get" action="/cadastro">
+          
+        Nome:
+        <input type="text" name="email">
+        E-mail:
+        <input type="text" name="nome">
+        <input type="submit"> 
+    </form>
     
-        <p>Quando colocamos os dados no formulário, sem ter uma página pronta para receber esses dados num backend, ele nao executa pq a pagina cadastro nao existe. aparece toda a informação no endereço. para os dados não serem enviados no endereço, tem q usar o método POST. SE FOR UMA PÁGINA DE LOGIN NÃO QUEREMOS QUE OS USUÁRIOS vejam aqueles dados ali. Do contrário, veriam inclusive nossa senha. Para que isso não aconteça, utilizamos o método POST. o que aparece no nosso endereço é 
+        <p>Experimente colocar dados aleatórios neste formulário, sem ter uma página pronta para receber esses dados num backend, ele nao executa pq a página /cadastro não existe. Se você reparar, ao enviar os dados, aparece toda a informação digitada na barra de endereço. Para os dados não ficarem expostos, temos q usar o <span>METHOD="POST"</span>. 
+        
+        <p>Como exemplo, em uma página de login, não é recomendável que o nome de usuário e senha fiquem expostos. Para que isso não aconteça, utilizamos o <span>METHOD:"POST"</span>. 
+            
+            
+            o que aparece no nosso endereço é 
             <br> http://127.0.0.1:5500/cadastro?email=paty&nome=paty<br>
         Analisando o que está escrito no endereço, vemos que o que está antes da interrogação (cadastro) é a nossa ACTION (é onde o backend estaria) Nosso primeiro input é EMAIL. depois do igual temos o email que foi digitado. Nosso segundo input é nome. Depois do igual temos o nome que foi digitado
         </p>>
