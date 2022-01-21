@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulários</title>
+</head>
+<body>
+
+    <H1>FORMULÁRIOS</H1>
+
+    <h2>Criando uma página no computador.</h2>
+     <p>Formulários são a conexão entre o front end e o backend. As interações com o usuário ocorrem através dos formulários. sempre que precisa de algum dado sendo passado pelo usuário. por exemplo no google, ele ve as palavras que o usuário está passando e o google retorna a nossa resposta. 
+    </p>
+
+    <p> para criar um formulário temos que declarar nossa tag form. quando vc clica no botão enviar, todos os campos dentro desse formulário serão enviados para o backend </p>
+
+    <p>Os métodos de envio pode ser GET ou POST. E precisamos de uma ACTION -> o endereço que vc vai utilizar para criar uma requisição. se o seu front end estiver rodando no mesmo domínio que o seu web service, não precisa por http:// mas precisa só colocar /endereço do endpoint. we o endereço for www.programadorbr e o backend estiver em www.programadorbr/cadastro, só precisa colocar /cadastro.
+    </p>
+
+   <p> campo INPUT TIPO TEXT (o mais comum) Nome para este campo (pex email). O NOME serve para que o navegador diferencie quando temos mais de um input (nome e email, pex)</p>
+
+        <form method="get" action="/cadastro">
+            <input type="text" name="email">
+            <input type="text" name="nome">
+            <input type="submit"> <!-- name="" CAMPO SUBMIT NÃO PRECISA DE NOME-->
+
+              
+
+
+        </form>
+    
+        <p>Quando colocamos os dados no formulário, sem ter uma página pronta para receber esses dados num backend, ele nao executa pq a pagina cadastro nao existe. aparece toda a informação no endereço. para os dados não serem enviados no endereço, tem q usar o método POST. SE FOR UMA PÁGINA DE LOGIN NÃO QUEREMOS QUE OS USUÁRIOS vejam aqueles dados ali. Do contrário, veriam inclusive nossa senha. Para que isso não aconteça, utilizamos o método POST. o que aparece no nosso endereço é 
+            <br> http://127.0.0.1:5500/cadastro?email=paty&nome=paty<br>
+        Analisando o que está escrito no endereço, vemos que o que está antes da interrogação (cadastro) é a nossa ACTION (é onde o backend estaria) Nosso primeiro input é EMAIL. depois do igual temos o email que foi digitado. Nosso segundo input é nome. Depois do igual temos o nome que foi digitado
+        </p>>
+
+        <form method="post" action="/cadastro">
+            <input type="text" name="email">
+            <input type="text" name="nome">
+            <input type="submit"> <!-- name="" CAMPO SUBMIT NÃO PRECISA DE NOME-->
+
+              
+
+
+        </form>
+
+        <p>Como método POST vemos que após digitar os dados, a página não mostra na sua barra de endereço o que foi digitado. Como dissemos anteriormente, é ideal para páginas de login e senha.
+        </p>    
+
+        <H2>YOUTUBE</H2>
+        <p>Vamos ao YOUTUBE. Digitando programação no campo de busca aparece assim: 
+            <br> https://www.youtube.com/results?search_query=programa%C3%A7%C3%A3o
+  
+
+
+        </p>
+
+        <p> Analisando o caminho que aparece no endereço já entendemos que o método é GET, pois os dados estão visíveis. Antes da primeira interrogação temos "https://www.youtube.com/results", que é a nossa ACTION. Sabemos que é um input do tipo text, pois temos que digitar no campo de busca para receber o resultado. Logo depois da nossa action temos "search_query", que é o NAME 
+        </p>
+
+        <p> Para recriar este formulário do youtube, como eu faria? <br>
+            
+            <form method="get" action="https://www.youtube.com/results">
+                <input type="text" name="search_query">
+                <input type="submit">
+            </form>
+
+        </p>
+
+        <p>E acabamos de criar o campo de busca do google. Ainda sem formatação, mas com </p>
+</body>
+</html>
